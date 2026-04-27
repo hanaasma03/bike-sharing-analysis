@@ -14,14 +14,6 @@ def create_daily_orders_df(df):
     }).reset_index()
     return daily_orders_df
 
-def create_daily_orders_df(df):
-    daily_orders_df = df.resample(rule='D', on='dteday').agg({
-        "cnt": "sum",
-        "registered": "sum",
-        "casual": "sum"
-    }).reset_index()
-    return daily_orders_df
-
 def create_monthly_trend_mean_df(df):
     monthly_trend = df.groupby(['yr', 'mnth']).agg({"cnt": "mean"}).reset_index()
     month_names = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 
