@@ -47,6 +47,8 @@ def create_temp_binning_df(df):
 # Fungsi Load Data
 @st.cache_data
 def load_data():
+    base_dir = os.path.dirname(__file__)
+    
     day_df = pd.read_csv(os.path.join(current_dir, "day_clean.csv"))
     hour_df = pd.read_csv(os.path.join(current_dir, "hour_clean.csv"))
     
