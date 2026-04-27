@@ -54,8 +54,8 @@ def create_temp_binning_df(df):
 # Fungsi Load Data
 @st.cache_data
 def load_data():
-    day_df = pd.read_csv("day_clean.csv")
-    hour_df = pd.read_csv("hour_clean.csv")
+    day_df = pd.read_csv("dashboard/day_clean.csv")
+    hour_df = pd.read_csv("dashboard/hour_clean.csv")
     
     # Memastikan format tanggal benar
     day_df['dteday'] = pd.to_datetime(day_df['dteday'])
