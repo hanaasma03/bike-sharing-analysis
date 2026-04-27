@@ -47,16 +47,18 @@ def create_temp_binning_df(df):
 # Fungsi Load Data
 @st.cache_data
 def load_data():
-    base_dir = os.path.dirname(__file__)
+    # Mencari lokasi absolut dari file dashboard.py ini
+    current_dir = os.path.dirname(os.path.abspath(__file__))
     
+    # Menggabungkan lokasi folder dengan nama file secara otomatis
     day_df = pd.read_csv(os.path.join(current_dir, "day_clean.csv"))
     hour_df = pd.read_csv(os.path.join(current_dir, "hour_clean.csv"))
     
-    # Memastikan format tanggal benar
     day_df['dteday'] = pd.to_datetime(day_df['dteday'])
     hour_df['dteday'] = pd.to_datetime(hour_df['dteday'])
     
     return day_df, hour_df
+ 
 
 day_df, hour_df = load_data()
 
