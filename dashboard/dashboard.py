@@ -47,8 +47,8 @@ def create_temp_binning_df(df):
 @st.cache_data
 def load_data():
     # Pastikan nama file ini sama persis (huruf kecil/besar) dengan di GitHub
-    day_df = pd.read_csv("day_clean.csv")
-    hour_df = pd.read_csv("hour_clean.csv")
+    day_df = pd.read_csv("dashboard/day_clean.csv")
+    hour_df = pd.read_csv("dashboard/hour_clean.csv")
     
     day_df['dteday'] = pd.to_datetime(day_df['dteday'])
     hour_df['dteday'] = pd.to_datetime(hour_df['dteday'])
